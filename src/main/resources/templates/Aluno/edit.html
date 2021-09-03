@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Conteúdos do Ensino Médio</title>
+    <!--CSS-->
+    <link rel="stylesheet" th:href="@{/bootstrap-5.0.0/css/bootstrap.min.css}">
+    <link rel= "stylesheet" th:href="@{/css/estilo.css}">
+</head>
+<body>
+
+<header>
+    <h3>Conteúdos do Ensino Médio</h3>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/}">Principal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/conteudo/list}">Conteúdos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/aluno/list}">Alunos</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container container-formulario">
+
+    <div class="div-titulo">
+        <h3>Aluno</h3>
+    </div>
+
+
+    <div class="alert alert-succes" th:if="${salvou}">
+        <h3>Operação realizada com sucesso!</h3>
+    </div>
+
+    <div class="alert alert-danger" th:if="${erro}">
+        <h3>Erro ao Salvar!</h3>
+    </div>
+
+    <form th:action="@{/aluno/save}" th:object="${aluno}" method="POST">
+
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control"
+                   id="floatingInputId" placeholder="Código"
+                   readonly th:text="${aluno.id}">
+            <label for="floatingInputId">Código</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control"
+                   id="floatingInputNome" placeholder="Nome"
+                   th:text="${aluno.nome}">
+            <label for="floatingInputNome">Nome</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control"
+                   id="floatingInputTurma" placeholder="Turma"
+                   th:text="${aluno.turma}">
+            <label for="floatingInputTurma">Turma</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control"
+                   id="floatingInputAno" placeholder="Ano"
+                   th:text="${aluno.ano}" >
+
+            <label for="floatingInputAno">Ano</label>
+        </div>
+
+        <div class="div-botoes">
+            <button type="button" class="btn btn-outline-info"
+                    onclick="window.location.href=''/aluno/list'"
+            >
+                <i class="fas fa-backspace"></i>
+            </button>
+
+            <button type="submit" class="btn btn-outline-info">
+                <i class="fas fa-save"></i>
+            </button>
+        </div>
+
+    </form>
+</div>
+
+<footer>
+    @Todos os direitos reservados
+</footer>
+
+
+
+
+
+<!--JS-->
+<script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+<script th:src="@{/js/popper.min.js}"></script>
+<script th:src="@{/bootstrap-5.0.0/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>

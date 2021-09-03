@@ -1,0 +1,61 @@
+body{
+margin: 0;
+}
+
+header{
+  background-color: blueviolet;
+  color: aliceblue;
+  height: 100px;
+  padding-top: 30px;
+  padding-left: 16px;
+}
+
+.container{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.container-principal{
+  height: 600px;
+
+}
+
+.container-table{
+  min-height: 600px;
+}
+
+.container-formulario{
+  margin:auto;
+   min-height:400px;
+   width: 50%;
+}
+
+footer{
+  height: 300px;
+  background-color: blueviolet;
+  color:white;
+  text-align: center;
+
+}
+
+
+  .div-titulo{
+    background-color: rgb(117, 19, 209);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 8px;
+  }
+.td-controller{
+  width: 50px;
+}
+
+.div-novo{
+  float: right;
+}
+.div-botoes{
+  margin-bottom: 8px;
+  padding: 16px;
+}
+
+
+
